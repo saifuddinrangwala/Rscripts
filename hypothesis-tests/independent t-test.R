@@ -1,0 +1,7 @@
+setwd("~/Rscripts/hypothesis-tests")
+mydata = read.csv("datafiles/TV-Radio.csv")
+par(mfrow=c(1,2)) 
+plot(density(mydata$Television), "Television")
+plot(density(mydata$Radio), "Radio")
+boxplot(mydata$Television, mydata$Radio, ylab="Hours per week", names=c("Television", "Radio"), main="Viewing time per week")
+t.test(mydata$Television, mydata$Radio)
