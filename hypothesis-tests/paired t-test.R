@@ -1,0 +1,7 @@
+setwd("~/Rscripts/hypothesis-tests")
+mydata = read.csv("datafiles/PurchaseRating.csv")
+par(mfrow=c(1,2)) 
+plot(density(mydata$After), "After")
+plot(density(mydata$Before), "Before")
+boxplot(mydata$After, mydata$Before, ylab="Hours per week", names=c("After", "Before"), main="Purchase Rating")
+t.test(mydata$After ,mydata$Before, alternative="greater", paired=T, conf.level=.95)
