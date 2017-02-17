@@ -27,8 +27,8 @@ qplot(DogFood$sale, colour=DogFood$sheight, data=DogFood, geom="density")
 describeBy(DogFood$sale, DogFood$sheight)
 describeBy(DogFood$sale, DogFood$facing)
 
-# Get the annova table
-DogFood_aov <- aov(DogFood$sale ~ DogFood$sheight + DogFood$facing + DogFood$sheight:DogFood$facing, data = DogFood)
+# Get the annova table, customer is added as a co-variate
+DogFood_aov <- aov(DogFood$sale ~ DogFood$sheight + DogFood$facing + DogFood$Customers + DogFood$sheight:DogFood$facing, data = DogFood)
 summary(DogFood_aov)
 DogFood_residual = residuals(DogFood_aov)
 
