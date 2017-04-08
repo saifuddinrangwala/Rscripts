@@ -1,4 +1,6 @@
 require(labelled)
+require(haven)
+
 setwd("~/Rscripts/mannova")
 
 wolves <- read_sav("datafiles/wolves.sav")
